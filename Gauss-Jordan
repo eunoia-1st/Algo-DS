@@ -15,6 +15,7 @@ print("Step 3\n", m)
 m[0] -= m[0][1]*m[1]
 print("Step 4\n", m)
 
+=========================
 
 import numpy as np
 
