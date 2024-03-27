@@ -1,0 +1,69 @@
+class Antrian:
+  def __init__(self):
+    self.data = dict()
+    self.size = 0
+    
+  def push(self, value):
+    self.data[self.size] = value
+    self.size += 1
+    
+  def pop(self):
+    self.data[0] = None
+    for i in range(1, self.size):
+      self.data[i-1] = self.data[i]
+    self.data[self.size - 1] = None
+    self.size -= 1 
+    
+  def show(self):
+    for i in range(0, self.size):
+      print(self.data[i])
+      
+  def cari(self, value):
+    found = False
+    for i in range(0, self.size):
+      if self.data[i] == value:
+        found = True
+        break
+    return found
+    
+  def jumlah(self):
+    return self.size
+      
+noQ = Antrian()
+
+noQ.push(1)
+noQ.push(2)
+noQ.push(3)
+noQ.push(4)
+noQ.push(5)
+noQ.show()
+
+print("")
+print("Hapus yang paling depan")
+noQ.pop()
+noQ.show()
+
+print("")
+if noQ.cari(3) is True:
+  print("Angka ada")
+else:
+  print("Angka ga ada")
+  
+print("")
+print("Size antrian: ", noQ.jumlah())
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
