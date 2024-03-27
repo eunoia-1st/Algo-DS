@@ -1,3 +1,5 @@
+# Algo DS Rabu, 27 Maret 2024
+
 class Antrian:
   def __init__(self):
     self.data = dict()
